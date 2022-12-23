@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class LR_Controller : Movement
 {
-
+    public FootIK_Controller footIK;
     public void Awake()
     {
         PlayerInputActions playerInputActions = new PlayerInputActions();
@@ -13,6 +13,11 @@ public class LR_Controller : Movement
         playerInputActions.FPS_Player.Movement.performed += INPUT_VEL;
         playerInputActions.FPS_Player.Jump.performed += Player_Jump;
 
-        playerInputActions.FPS_Player.L_Attack.performed += GetComponentInChildren<GunController>().Shoot;
+        //playerInputActions.FPS_Player.L_Attack.performed += GetComponentInChildren<GunController>().Shoot;
+    }
+    public override void Player_Move()
+    {
+        base.Player_Move();
+        footIK.ChangeFootPos();
     }
 }

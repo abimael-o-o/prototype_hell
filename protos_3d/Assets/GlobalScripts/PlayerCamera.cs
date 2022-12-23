@@ -12,8 +12,8 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] float period = 5f;
     Vector3 defaultPosY;
 
-    float yRotation = 0f;
-    float xRotation = 0f;
+    //float yRotation = 0f;
+    public float xRotation { get; private set; } = 0f;
 
     void Start()
     {
@@ -23,16 +23,18 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
-        //CameraSway();
+        CameraSway();
 
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         //yRotation += mouseX;
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+        xRotation = Mathf.Clamp(xRotation, -40f, 40f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+        //TODO: When xRotation is -38 or 38 move gun position accordingly.
     }
 
     void CameraSway()
