@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+public class FP_PlayerCamera : MonoBehaviour
 {
     //FPS Player Camera.
     [SerializeField] float mouseSensitivity = 200f;
