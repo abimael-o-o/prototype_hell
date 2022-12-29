@@ -154,6 +154,98 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ISOMETRIC_Player"",
+            ""id"": ""a04e0f72-2fa7-4c08-84a2-f9685217e3b9"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""7b3e9708-096d-4a00-8976-deeb8d06f45c"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""507db815-61bf-470e-b750-68f5c0d0c542"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""4742eb1b-f5fd-481c-87c3-f513a2601c78"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""517a5c93-44f7-4ed9-9064-ad2d2d00aff0"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""48479bf4-cf85-4d7f-8224-c1404c94db15"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""194b0b50-c0c3-4684-a527-5d0a6ac3de60"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9b715b76-b070-46b0-992e-cc5f38b40628"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5713a9cc-92a0-430f-813d-30e933dc5415"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -164,6 +256,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_FPS_Player_Jump = m_FPS_Player.FindAction("Jump", throwIfNotFound: true);
         m_FPS_Player_MouseMove = m_FPS_Player.FindAction("MouseMove", throwIfNotFound: true);
         m_FPS_Player_L_Attack = m_FPS_Player.FindAction("L_Attack", throwIfNotFound: true);
+        // ISOMETRIC_Player
+        m_ISOMETRIC_Player = asset.FindActionMap("ISOMETRIC_Player", throwIfNotFound: true);
+        m_ISOMETRIC_Player_Move = m_ISOMETRIC_Player.FindAction("Move", throwIfNotFound: true);
+        m_ISOMETRIC_Player_Jump = m_ISOMETRIC_Player.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,11 +372,57 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     }
     public FPS_PlayerActions @FPS_Player => new FPS_PlayerActions(this);
+
+    // ISOMETRIC_Player
+    private readonly InputActionMap m_ISOMETRIC_Player;
+    private IISOMETRIC_PlayerActions m_ISOMETRIC_PlayerActionsCallbackInterface;
+    private readonly InputAction m_ISOMETRIC_Player_Move;
+    private readonly InputAction m_ISOMETRIC_Player_Jump;
+    public struct ISOMETRIC_PlayerActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public ISOMETRIC_PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_ISOMETRIC_Player_Move;
+        public InputAction @Jump => m_Wrapper.m_ISOMETRIC_Player_Jump;
+        public InputActionMap Get() { return m_Wrapper.m_ISOMETRIC_Player; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ISOMETRIC_PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IISOMETRIC_PlayerActions instance)
+        {
+            if (m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface != null)
+            {
+                @Move.started -= m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface.OnMove;
+                @Jump.started -= m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface.OnJump;
+            }
+            m_Wrapper.m_ISOMETRIC_PlayerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+            }
+        }
+    }
+    public ISOMETRIC_PlayerActions @ISOMETRIC_Player => new ISOMETRIC_PlayerActions(this);
     public interface IFPS_PlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMouseMove(InputAction.CallbackContext context);
         void OnL_Attack(InputAction.CallbackContext context);
+    }
+    public interface IISOMETRIC_PlayerActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }

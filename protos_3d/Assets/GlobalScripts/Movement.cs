@@ -9,13 +9,14 @@ public class Movement : MonoBehaviour
     public float moveSpeed;
     public LayerMask groundLayer;
 
-    float vel_X;
-    float vel_Y;
+    public float vel_X;
+    public float vel_Y;
 
-    private CharacterController controller;
-    Vector3 moveDirection;
-    Vector3 velocity;
-    float gravity = -10f;
+    public CharacterController controller;
+    //Vector3 moveDirection;
+    public Vector3 velocity;
+    public Vector3 move;
+    public float gravity = -10f;
     public void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -32,7 +33,7 @@ public class Movement : MonoBehaviour
         }
 
         //Move the player.
-        Vector3 move = transform.right * vel_X + transform.forward * vel_Y;
+        move = transform.right * vel_X + transform.forward * vel_Y;
         controller.Move(move * moveSpeed * Time.deltaTime);
 
         //Add gravity.
