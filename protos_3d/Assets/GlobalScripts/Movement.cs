@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     public Vector3 velocity;
     public Vector3 move;
     public float gravity = -10f;
+    public float jumpForce = 10f;
     public void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -44,7 +45,8 @@ public class Movement : MonoBehaviour
     {
         if (context.performed && isGrounded())
         {
-            Debug.Log("Jump");
+            velocity.y += jumpForce;
+            controller.Move(velocity * Time.deltaTime);
         }
     }
     public void INPUT_VEL(InputAction.CallbackContext context)

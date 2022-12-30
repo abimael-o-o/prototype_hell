@@ -378,7 +378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676200333}
   m_LocalRotation: {x: 0.11546514, y: -0.6197836, z: 0.081863865, w: 0.7719031}
-  m_LocalPosition: {x: 4.14, y: 2.461, z: -2.07}
+  m_LocalPosition: {x: 4.966, y: 3.358, z: -1.863}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -965,7 +965,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1306597350
@@ -985,6 +985,13 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  vel_X: 0
+  vel_Y: 0
+  controller: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  move: {x: 0, y: 0, z: 0}
+  gravity: -10
+  jumpForce: 7
 --- !u!1 &1577367220
 GameObject:
   m_ObjectHideFlags: 0
@@ -9836,7 +9843,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-81274
+  m_Name: pb_Mesh28302
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

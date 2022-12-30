@@ -26,7 +26,7 @@ public class GK_Movement : Movement
         if(direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            float angle = Mathf.SmoothDamp(transform.eulerAngles.y, targetAngle, ref turnSmoothvelocity, 0.1f);
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothvelocity, 0.1f);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             controller.Move(direction * moveSpeed * Time.deltaTime);
