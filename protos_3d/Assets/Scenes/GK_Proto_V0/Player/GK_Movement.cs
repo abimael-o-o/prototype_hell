@@ -15,11 +15,6 @@ public class GK_Movement : Movement
     }
     public override void Player_Move()
     {
-        if (isGrounded() && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-
         //Move the player.
         Vector3 direction = new Vector3(vel_X, 0f, vel_Y);
 
@@ -31,9 +26,5 @@ public class GK_Movement : Movement
 
             controller.Move(direction * moveSpeed * Time.deltaTime);
         }
-
-        //Add gravity.
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
     }
 }

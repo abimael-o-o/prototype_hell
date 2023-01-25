@@ -62,6 +62,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""035b444f-94c9-4962-8636-ca158c6299b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -150,6 +159,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""L_Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80c0a07f-39a4-4b71-9e33-e7dabec6aa39"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -246,6 +266,226 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ThirdPerson_Player"",
+            ""id"": ""4f7f0ef9-6eb1-4f24-88ea-b6f04f495f2e"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""6639dfe5-83b2-4541-adb2-ef947f54dd5b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""c86a4000-0bd8-4381-a45e-57008f89dfa0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseMove"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""402883c8-cc04-4f58-a614-8965bc5c0186"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""L_Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""61c3f5ad-efa5-4250-9392-4ce91ebfa77d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""fff3d013-971d-42fc-a2cd-92bb60a88d00"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""1b23fa2d-ccdd-4195-b0d2-5a8258d070e4"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a4644672-e556-4f70-90a5-ff06833635e6"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""87c8e58b-d17e-4258-b10a-3e9b95a1abd1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1625082f-bb85-4e52-b83a-f4ca3846820a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""09382455-095f-4f25-a8e1-5c56d0da70c3"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dad1021-15e4-4700-95fa-304a450335c7"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0fc8994-952b-410a-8c37-3361e7ba554c"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb4deca6-a333-4491-8ee3-1a6bd3e3d765"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""L_Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b51e013-26f8-4a37-8872-743484a105fa"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""ObjectActions"",
+            ""id"": ""a4650f78-fc00-44c2-81e6-65167c9cebcf"",
+            ""actions"": [
+                {
+                    ""name"": ""Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""208eb4a6-63a0-46c4-8f17-aab7c9abe7e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""6136d97f-bcf7-4703-ac30-25aad2dfc8b2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd2272b8-84be-416e-a1b7-aac91cf44d8e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1cb769c7-0e9b-4eb5-baf1-108192b65a12"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""406aa418-7744-46fb-939b-58fa0fb1c9c3"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""063c622c-8065-492b-8c67-188f6e81be0b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -256,10 +496,23 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_FPS_Player_Jump = m_FPS_Player.FindAction("Jump", throwIfNotFound: true);
         m_FPS_Player_MouseMove = m_FPS_Player.FindAction("MouseMove", throwIfNotFound: true);
         m_FPS_Player_L_Attack = m_FPS_Player.FindAction("L_Attack", throwIfNotFound: true);
+        m_FPS_Player_Crouch = m_FPS_Player.FindAction("Crouch", throwIfNotFound: true);
         // ISOMETRIC_Player
         m_ISOMETRIC_Player = asset.FindActionMap("ISOMETRIC_Player", throwIfNotFound: true);
         m_ISOMETRIC_Player_Move = m_ISOMETRIC_Player.FindAction("Move", throwIfNotFound: true);
         m_ISOMETRIC_Player_Jump = m_ISOMETRIC_Player.FindAction("Jump", throwIfNotFound: true);
+        // ThirdPerson_Player
+        m_ThirdPerson_Player = asset.FindActionMap("ThirdPerson_Player", throwIfNotFound: true);
+        m_ThirdPerson_Player_Movement = m_ThirdPerson_Player.FindAction("Movement", throwIfNotFound: true);
+        m_ThirdPerson_Player_Jump = m_ThirdPerson_Player.FindAction("Jump", throwIfNotFound: true);
+        m_ThirdPerson_Player_MouseMove = m_ThirdPerson_Player.FindAction("MouseMove", throwIfNotFound: true);
+        m_ThirdPerson_Player_L_Attack = m_ThirdPerson_Player.FindAction("L_Attack", throwIfNotFound: true);
+        m_ThirdPerson_Player_Crouch = m_ThirdPerson_Player.FindAction("Crouch", throwIfNotFound: true);
+        // ObjectActions
+        m_ObjectActions = asset.FindActionMap("ObjectActions", throwIfNotFound: true);
+        m_ObjectActions_Hold = m_ObjectActions.FindAction("Hold", throwIfNotFound: true);
+        m_ObjectActions_Use = m_ObjectActions.FindAction("Use", throwIfNotFound: true);
+        m_ObjectActions_Throw = m_ObjectActions.FindAction("Throw", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -323,6 +576,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_FPS_Player_Jump;
     private readonly InputAction m_FPS_Player_MouseMove;
     private readonly InputAction m_FPS_Player_L_Attack;
+    private readonly InputAction m_FPS_Player_Crouch;
     public struct FPS_PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -331,6 +585,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_FPS_Player_Jump;
         public InputAction @MouseMove => m_Wrapper.m_FPS_Player_MouseMove;
         public InputAction @L_Attack => m_Wrapper.m_FPS_Player_L_Attack;
+        public InputAction @Crouch => m_Wrapper.m_FPS_Player_Crouch;
         public InputActionMap Get() { return m_Wrapper.m_FPS_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -352,6 +607,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @L_Attack.started -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnL_Attack;
                 @L_Attack.performed -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnL_Attack;
                 @L_Attack.canceled -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnL_Attack;
+                @Crouch.started -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnCrouch;
             }
             m_Wrapper.m_FPS_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -368,6 +626,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @L_Attack.started += instance.OnL_Attack;
                 @L_Attack.performed += instance.OnL_Attack;
                 @L_Attack.canceled += instance.OnL_Attack;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
             }
         }
     }
@@ -413,16 +674,145 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     }
     public ISOMETRIC_PlayerActions @ISOMETRIC_Player => new ISOMETRIC_PlayerActions(this);
+
+    // ThirdPerson_Player
+    private readonly InputActionMap m_ThirdPerson_Player;
+    private IThirdPerson_PlayerActions m_ThirdPerson_PlayerActionsCallbackInterface;
+    private readonly InputAction m_ThirdPerson_Player_Movement;
+    private readonly InputAction m_ThirdPerson_Player_Jump;
+    private readonly InputAction m_ThirdPerson_Player_MouseMove;
+    private readonly InputAction m_ThirdPerson_Player_L_Attack;
+    private readonly InputAction m_ThirdPerson_Player_Crouch;
+    public struct ThirdPerson_PlayerActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public ThirdPerson_PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_ThirdPerson_Player_Movement;
+        public InputAction @Jump => m_Wrapper.m_ThirdPerson_Player_Jump;
+        public InputAction @MouseMove => m_Wrapper.m_ThirdPerson_Player_MouseMove;
+        public InputAction @L_Attack => m_Wrapper.m_ThirdPerson_Player_L_Attack;
+        public InputAction @Crouch => m_Wrapper.m_ThirdPerson_Player_Crouch;
+        public InputActionMap Get() { return m_Wrapper.m_ThirdPerson_Player; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ThirdPerson_PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IThirdPerson_PlayerActions instance)
+        {
+            if (m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnMovement;
+                @Jump.started -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnJump;
+                @MouseMove.started -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnMouseMove;
+                @MouseMove.performed -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnMouseMove;
+                @MouseMove.canceled -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnMouseMove;
+                @L_Attack.started -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnL_Attack;
+                @L_Attack.performed -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnL_Attack;
+                @L_Attack.canceled -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnL_Attack;
+                @Crouch.started -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface.OnCrouch;
+            }
+            m_Wrapper.m_ThirdPerson_PlayerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @MouseMove.started += instance.OnMouseMove;
+                @MouseMove.performed += instance.OnMouseMove;
+                @MouseMove.canceled += instance.OnMouseMove;
+                @L_Attack.started += instance.OnL_Attack;
+                @L_Attack.performed += instance.OnL_Attack;
+                @L_Attack.canceled += instance.OnL_Attack;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+            }
+        }
+    }
+    public ThirdPerson_PlayerActions @ThirdPerson_Player => new ThirdPerson_PlayerActions(this);
+
+    // ObjectActions
+    private readonly InputActionMap m_ObjectActions;
+    private IObjectActionsActions m_ObjectActionsActionsCallbackInterface;
+    private readonly InputAction m_ObjectActions_Hold;
+    private readonly InputAction m_ObjectActions_Use;
+    private readonly InputAction m_ObjectActions_Throw;
+    public struct ObjectActionsActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public ObjectActionsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Hold => m_Wrapper.m_ObjectActions_Hold;
+        public InputAction @Use => m_Wrapper.m_ObjectActions_Use;
+        public InputAction @Throw => m_Wrapper.m_ObjectActions_Throw;
+        public InputActionMap Get() { return m_Wrapper.m_ObjectActions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ObjectActionsActions set) { return set.Get(); }
+        public void SetCallbacks(IObjectActionsActions instance)
+        {
+            if (m_Wrapper.m_ObjectActionsActionsCallbackInterface != null)
+            {
+                @Hold.started -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnHold;
+                @Hold.performed -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnHold;
+                @Hold.canceled -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnHold;
+                @Use.started -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnUse;
+                @Use.performed -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnUse;
+                @Use.canceled -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnUse;
+                @Throw.started -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnThrow;
+                @Throw.performed -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnThrow;
+                @Throw.canceled -= m_Wrapper.m_ObjectActionsActionsCallbackInterface.OnThrow;
+            }
+            m_Wrapper.m_ObjectActionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Hold.started += instance.OnHold;
+                @Hold.performed += instance.OnHold;
+                @Hold.canceled += instance.OnHold;
+                @Use.started += instance.OnUse;
+                @Use.performed += instance.OnUse;
+                @Use.canceled += instance.OnUse;
+                @Throw.started += instance.OnThrow;
+                @Throw.performed += instance.OnThrow;
+                @Throw.canceled += instance.OnThrow;
+            }
+        }
+    }
+    public ObjectActionsActions @ObjectActions => new ObjectActionsActions(this);
     public interface IFPS_PlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMouseMove(InputAction.CallbackContext context);
         void OnL_Attack(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
     }
     public interface IISOMETRIC_PlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+    }
+    public interface IThirdPerson_PlayerActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMouseMove(InputAction.CallbackContext context);
+        void OnL_Attack(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+    }
+    public interface IObjectActionsActions
+    {
+        void OnHold(InputAction.CallbackContext context);
+        void OnUse(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
     }
 }
