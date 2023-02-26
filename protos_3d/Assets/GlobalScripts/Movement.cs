@@ -18,9 +18,11 @@ public class Movement : MonoBehaviour
     public Vector3 move { get; set; }
     public float gravity = -10f;
     public float jumpForce = 10f;
+    private float defaultSpeed;
     public void Start()
     {
         controller = GetComponent<CharacterController>();
+        defaultSpeed = moveSpeed;
     }
     public void Update()
     {
@@ -36,6 +38,17 @@ public class Movement : MonoBehaviour
         //Add gravity.
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+    public virtual void Player_Run(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            moveSpeed = moveSpeed * 2f;
+        }
+        if(context.canceled)
+        {
+            moveSpeed = defaultSpeed;
+        }
     }
     public virtual void Player_Move()
     {

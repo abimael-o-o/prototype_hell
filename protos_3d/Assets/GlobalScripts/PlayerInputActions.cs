@@ -71,6 +71,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc387c41-a369-42d6-9665-51fa5609d095"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -170,6 +179,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""465d5eff-466e-4cb5-8066-5e7f323b7266"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -497,6 +517,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_FPS_Player_MouseMove = m_FPS_Player.FindAction("MouseMove", throwIfNotFound: true);
         m_FPS_Player_L_Attack = m_FPS_Player.FindAction("L_Attack", throwIfNotFound: true);
         m_FPS_Player_Crouch = m_FPS_Player.FindAction("Crouch", throwIfNotFound: true);
+        m_FPS_Player_Run = m_FPS_Player.FindAction("Run", throwIfNotFound: true);
         // ISOMETRIC_Player
         m_ISOMETRIC_Player = asset.FindActionMap("ISOMETRIC_Player", throwIfNotFound: true);
         m_ISOMETRIC_Player_Move = m_ISOMETRIC_Player.FindAction("Move", throwIfNotFound: true);
@@ -577,6 +598,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_FPS_Player_MouseMove;
     private readonly InputAction m_FPS_Player_L_Attack;
     private readonly InputAction m_FPS_Player_Crouch;
+    private readonly InputAction m_FPS_Player_Run;
     public struct FPS_PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -586,6 +608,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @MouseMove => m_Wrapper.m_FPS_Player_MouseMove;
         public InputAction @L_Attack => m_Wrapper.m_FPS_Player_L_Attack;
         public InputAction @Crouch => m_Wrapper.m_FPS_Player_Crouch;
+        public InputAction @Run => m_Wrapper.m_FPS_Player_Run;
         public InputActionMap Get() { return m_Wrapper.m_FPS_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -610,6 +633,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Crouch.started -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnCrouch;
                 @Crouch.performed -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnCrouch;
                 @Crouch.canceled -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnCrouch;
+                @Run.started -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnRun;
+                @Run.performed -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnRun;
+                @Run.canceled -= m_Wrapper.m_FPS_PlayerActionsCallbackInterface.OnRun;
             }
             m_Wrapper.m_FPS_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -629,6 +655,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Crouch.started += instance.OnCrouch;
                 @Crouch.performed += instance.OnCrouch;
                 @Crouch.canceled += instance.OnCrouch;
+                @Run.started += instance.OnRun;
+                @Run.performed += instance.OnRun;
+                @Run.canceled += instance.OnRun;
             }
         }
     }
@@ -795,6 +824,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnMouseMove(InputAction.CallbackContext context);
         void OnL_Attack(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnRun(InputAction.CallbackContext context);
     }
     public interface IISOMETRIC_PlayerActions
     {

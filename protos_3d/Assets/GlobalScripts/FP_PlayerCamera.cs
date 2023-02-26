@@ -25,8 +25,8 @@ public class FP_PlayerCamera : MonoBehaviour
     {
         CameraSway();
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         //yRotation += mouseX;
         xRotation -= mouseY;
