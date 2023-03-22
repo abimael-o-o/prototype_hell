@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="60" height="30" tilewidth="32" tileheight="32" infinite="1" nextlayerid="4" nextobjectid="1">
+ <tileset firstgid="1" source="Tileset01.tsx"/>
+ <layer id="3" name="Background" width="60" height="30">
+  <data encoding="base64" compression="zlib">
+   <chunk x="0" y="-16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="16" y="-16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="32" y="-16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="48" y="-16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="0" y="0" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="16" y="0" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="32" y="0" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="48" y="0" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="0" y="16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="16" y="16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="32" y="16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="48" y="16" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="0" y="32" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="16" y="32" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="32" y="32" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+   <chunk x="48" y="32" width="16" height="16">
+   eJxjZmBgYB7Fo3gUj0gMAApaAwE=
+  </chunk>
+  </data>
+ </layer>
+ <layer id="1" name="Walk" width="60" height="30">
+  <data encoding="base64" compression="zlib">
+   <chunk x="-16" y="16" width="16" height="16">
+   eJxjYBgFQwEw4sD00o/LzFEwtAEAH+wADg==
+  </chunk>
+   <chunk x="0" y="16" width="16" height="16">
+   eJxjYBgFAwkYicTk6iMXj4KRAQBOvAAj
+  </chunk>
+   <chunk x="16" y="16" width="16" height="16">
+   eJxjYBgFAwkYBxiPgpENAExAACE=
+  </chunk>
+   <chunk x="32" y="16" width="16" height="16">
+   eJxjYBgF1AKMUEyOnoHCo2BkAwBRpAAj
+  </chunk>
+   <chunk x="48" y="16" width="16" height="16">
+   eJxjYBgF1AKMeDA5euiBR8HIBgBe2AAo
+  </chunk>
+   <chunk x="64" y="16" width="16" height="16">
+   eJxjYBgFAwkYkfBA6B8FIxsAABIoAAc=
+  </chunk>
+  </data>
+ </layer>
+ <layer id="2" name="Foreground" width="60" height="30">
+  <data encoding="base64" compression="zlib"/>
+ </layer>
+</map>
