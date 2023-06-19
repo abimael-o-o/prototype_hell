@@ -7,6 +7,7 @@ public class EnemyBehavior : MonoBehaviour
 {
     public NavMeshAgent enemy;
     public Transform player;
+    public GameObject attack;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,13 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         enemy.SetDestination(player.position);
+        if(enemy.remainingDistance < enemy.stoppingDistance && enemy.remainingDistance != 0)
+        {
+            attack.SetActive(true);
+        }
+        else
+        {
+            attack.SetActive(false);
+        }
     }
 }
