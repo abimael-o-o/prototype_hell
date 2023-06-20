@@ -5,13 +5,21 @@ using UnityEngine.Events;
 
 public class TriggerEvent : MonoBehaviour
 {
-    [SerializeField] private UnityEvent myEvent;
+    [SerializeField] private UnityEvent eventOn;
+    [SerializeField] private UnityEvent eventOff;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            myEvent.Invoke();
+            eventOn.Invoke();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            eventOff.Invoke();
         }
     }
 }

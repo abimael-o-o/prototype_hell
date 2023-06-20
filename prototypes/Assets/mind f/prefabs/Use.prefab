@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5407755842336755316}
   - component: {fileID: 5407755842336755319}
   - component: {fileID: 5407755842336755322}
+  - component: {fileID: 4489340505483180813}
   m_Layer: 0
-  m_Name: UseText
+  m_Name: Use
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +85,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5407755842336755318}
-  m_Text: Use [E]
+  m_Text: E
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 2
@@ -110,3 +111,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65437e7d11ac0345ac9001a5af7cea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4489340505483180813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407755842336755318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3054b50aec21e54eb75a71272086fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myEvent:
+    m_PersistentCalls:
+      m_Calls: []
