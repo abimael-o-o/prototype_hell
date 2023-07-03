@@ -11,19 +11,18 @@ public class FirstPersonMovement : MonoBehaviour
     public float runSpeed = 9;
     public KeyCode runningKey = KeyCode.LeftShift;
 
-    Rigidbody rb;
+    CharacterController character;
+    float gravity = -9.81f;
+    Vector3 velocity; //Only used for gravity movement.
+
     /// <summary> Functions to override movement speed. Will use the last added override. </summary>
     public List<System.Func<float>> speedOverrides = new List<System.Func<float>>();
 
-    float xmove;
-    float ymove;
-
     void Awake()
     {
-        // Get the rigidbody on this.
-        rb = GetComponent<Rigidbody>();
+        character = GetComponent<CharacterController>();
     }
-    void FixedUpdate()
+    void Update()
     {
         // Update IsRunning from input.
         IsRunning = canRun && Input.GetKey(runningKey);
@@ -36,9 +35,14 @@ public class FirstPersonMovement : MonoBehaviour
         }
 
         // Get targetVelocity from input.
-        Vector2 targetVelocity = new Vector2(Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
+        Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         // Apply movement.
-        rb.velocity = transform.rotation * new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.y);
+        Vector3 direction = transform.rotation * new Vector3(targetVelocity.x, 0, targetVelocity.y);
+        character.Move(direction.normalized * targetMovingSpeed * Time.deltaTime);
+
+
+        velocity.y += gravity * Time.deltaTime;
+        character.Move(velocity * 2f * Time.deltaTime);
     }
 }

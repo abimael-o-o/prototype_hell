@@ -8,8 +8,7 @@ public class CameraFollow : MonoBehaviour
     public Transform player;
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(
-                                            player.position.x, playerCam.position.y, player.position.z), .2f);
+        transform.position = playerCam.position;
 
         Quaternion newRotation = new Quaternion(playerCam.rotation.x, playerCam.rotation.y,
                                                         playerCam.rotation.z, player.rotation.w);
