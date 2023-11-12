@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8np4327i45eo"]
+
+[ext_resource type="Texture2D" uid="uid://5o1vl2dd037a" path="res://texture_08.png" id="1_f0vgh"]
+[ext_resource type="Script" path="res://scripts/polygon_collision.cs" id="2_w37ey"]
+
+[node name="Map" type="Node2D"]
+
+[node name="Tree" type="Polygon2D" parent="."]
+position = Vector2(17, -7)
+color = Color(0.470588, 0.470588, 0.470588, 1)
+polygon = PackedVector2Array(146, 426, 129, 89, 98, -710, -241, -715, -238, 269, -280, 680, -312, 913, 198, 858, 155, 519)
+
+[node name="Ground" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(17, -7)
+texture = ExtResource("1_f0vgh")
+texture_scale = Vector2(3, 3)
+polygon = PackedVector2Array(-74, 684, 13, 544, 90, 535, 147, 420, 268, 419, 399, 429, 546, 445, 776, 536, 948, 631, 1029, 641, 1152, 648, 1752, 677, 2190.69, 664.584, 2855, 783, 3213, 829, 3539, 836, 3552.44, 1030.82, 3521, 1546, 2910, 1363, 2824, 1096.2, 1716, 1095, 51, 1051, -102, 834)
+script = ExtResource("2_w37ey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="Ground2" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-21, -86)
+texture = ExtResource("1_f0vgh")
+texture_scale = Vector2(3, 3)
+polygon = PackedVector2Array(3530, 1631, 3537, 1179, 3839.61, 1179, 4192, 1179, 4283, 1180, 4294, 1379, 4288, 1644)
+script = ExtResource("2_w37ey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+
+[node name="Ground3" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(706, -513)
+texture = ExtResource("1_f0vgh")
+texture_scale = Vector2(3, 3)
+polygon = PackedVector2Array(3553, 1622, 3549, 1600, 3567, 1588, 3666, 1614, 3782, 1637, 3943, 1674, 3940, 1718, 3909, 1716, 3679, 1658)
+script = ExtResource("2_w37ey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
+
+[node name="Ground4" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(1008, -195)
+texture = ExtResource("1_f0vgh")
+texture_scale = Vector2(3, 3)
+polygon = PackedVector2Array(3651, 1727, 3602, 1555, 3624, 1398, 3710, 1376, 3880, 1367, 3980, 1327, 4051, 1286, 4493, 1277, 4773, 1248, 4866, 1280, 4887, 1742)
+script = ExtResource("2_w37ey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
+
+[node name="House" type="Polygon2D" parent="."]
+position = Vector2(100, 153)
+scale = Vector2(0.777778, 0.5)
+color = Color(0.839216, 0.839216, 0.839216, 1)
+polygon = PackedVector2Array(176.714, 416, 171.571, 360, 169, 310, 184, 308, 187, 358, 187, 414)
+
+[node name="Polygon2D" type="Polygon2D" parent="House"]
+color = Color(0.854902, 0.854902, 0.854902, 1)
+polygon = PackedVector2Array(284.714, 524, 295, 282, 234.571, 152, 175.429, 280, 178, 314, 189.571, 314, 197.286, 412, 217.286, 422, 220.429, 522)
+
+[node name="Polygon2D2" type="Polygon2D" parent="House"]
+position = Vector2(-128.571, -306)
+scale = Vector2(1.28571, 2)
+color = Color(0.752941, 0.752941, 0.752941, 1)
+polygon = PackedVector2Array(266, 348, 293, 349, 379, 406, 379, 419, 311, 415, 288, 414, 266, 364)
+
+[node name="Polygon2D3" type="Polygon2D" parent="House"]
+position = Vector2(7.71428, -4)
+color = Color(0.811765, 0.811765, 0.811765, 1)
+polygon = PackedVector2Array(167.143, 408, 204.429, 412, 230.143, 446, 240.429, 482, 235.286, 526, 205.714, 534, 136.286, 530, 126, 512, 141.429, 442)
+
+[node name="Polygon2D4" type="Polygon2D" parent="House"]
+position = Vector2(-2.57143, -6)
+color = Color(0.85098, 0.854902, 0.843137, 1)
+polygon = PackedVector2Array(241.714, 532, 249.429, 502, 264.857, 498, 275.143, 512, 279, 538, 263.571, 542)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.95, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(511, -23.0001)
+scale = Vector2(0.995587, 0.994785)
+color = Color(0.34902, 0.34902, 0.34902, 1)
+polygon = PackedVector2Array(-1415.25, 945.933, -1628.19, -999.211, -1238.47, -989.159, -919.056, 1002.23, -1385.11, 1047.46)
+
+[node name="Polygon2D6" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(3142, 578)
+rotation = 0.261799
+scale = Vector2(0.995587, 0.994785)
+color = Color(0.34902, 0.34902, 0.34902, 1)
+polygon = PackedVector2Array(-1415.25, 945.933, -1628.19, -999.211, -1238.47, -989.159, -919.056, 1002.23, -1385.11, 1047.46)
+
+[node name="Polygon2D7" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(3574, 60.0001)
+scale = Vector2(0.995587, 0.994785)
+color = Color(0.439216, 0.439216, 0.439216, 1)
+polygon = PackedVector2Array(-1415.25, 945.933, -1533.77, -1204.28, -1120.95, -1268.62, -919.056, 1002.23, -1385.11, 1047.46)
+
+[node name="Polygon2D8" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(4267, 498)
+scale = Vector2(0.995587, 1.42396)
+color = Color(0.321569, 0.321569, 0.321569, 1)
+polygon = PackedVector2Array(-1537.79, 964.214, -1509.66, -1705.11, -747.298, -1917.89, -402.778, 1313.94, -1563.9, 1153.12)
+
+[node name="Polygon2D2" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(511, -23)
+color = Color(0.392157, 0.392157, 0.392157, 1)
+polygon = PackedVector2Array(-1036, 805, -759, -944, -603, -828, -683, 992, -1102, 986)
+
+[node name="Polygon2D4" type="Polygon2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(0, 307)
+color = Color(0.372549, 0.372549, 0.372549, 1)
+polygon = PackedVector2Array(589, 750, 673, -936, 757, -880, 810, 780)
